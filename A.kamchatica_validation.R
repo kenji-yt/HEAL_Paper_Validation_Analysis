@@ -57,10 +57,11 @@ wgbs_filt <- filter_bins(wgbs_list)
 sub_50_filt <- filter_bins(subset_50M_dna)
 sub_20_filt <- filter_bins(subset_20M_dna)
 
+########## Supplementary figure 7 ###########
 # GC correction and plot generation (commented out here )
-dn_gc_cor <- correct_gc(dna_filt, n_windows = 10, loess_span = 1, pch = 16, alpha = 0.1, cex = 0.4, ymax = 5 )#, device = "png", output_dir = "/srv/kenlab/kenji/exploring_rs7_BMC_genomic_paper/")
-sub_50_gc_cor <- correct_gc(sub_50_filt, n_windows = 10, loess_span = 1, pch = 16, alpha = 0.1, cex = 0.4, ymax = 5 )#, device = "png", output_dir = "/srv/kenlab/kenji/exploring_rs7_BMC_genomic_paper/")
-sub_20_gc_cor <- correct_gc(sub_20_filt, n_windows = 10, loess_span = 1, pch = 16, alpha = 0.1, cex = 0.4, ymax = 5 )#, device = "png", output_dir = "/srv/kenlab/kenji/exploring_rs7_BMC_genomic_paper/")
+dn_gc_cor <- correct_gc(dna_filt, n_windows = 10, loess_span = 1, pch = 16, alpha = 0.1, cex = 0.4, ymax = 5, device = "png", output_dir = "/srv/kenlab/kenji/exploring_rs7_BMC_genomic_paper/")
+sub_50_gc_cor <- correct_gc(sub_50_filt, n_windows = 10, loess_span = 1, pch = 16, alpha = 0.1, cex = 0.4, ymax = 5, device = "png", output_dir = "/srv/kenlab/kenji/exploring_rs7_BMC_genomic_paper/")
+sub_20_gc_cor <- correct_gc(sub_20_filt, n_windows = 10, loess_span = 1, pch = 16, alpha = 0.1, cex = 0.4, ymax = 5, device = "png", output_dir = "/srv/kenlab/kenji/exploring_rs7_BMC_genomic_paper/")
 
 ## Correction seems not necessarily desirable.
 
@@ -189,14 +190,6 @@ grid.arrange(dna_plot, wgbs_plot, nrow = 2)
 
 aln <- get_heal_alignment(dna_cn, genespace_dir = "/srv/kenlab/kenji/re_ana_rs7/HEAL/results/genespace/", n_threads = 10)
 wgbs_aln <- get_heal_alignment(wgbs_cn, genespace_dir = "/srv/kenlab/kenji/re_ana_rs7/HEAL/results/genespace/", n_threads = 20)
-
-######################
-# Remove short spans #
-######################
-# wgbs_ns_cn <- remove_short_spans(wgbs_cn, max_length = 5)
-# dna_ns_cn <- remove_short_spans(dna_cn, max_length = 5)
-# sub_50_ns_cn <- remove_short_spans(sub_50_cn, max_length = 5)
-# sub_20_ns_cn <- remove_short_spans(sub_20_cn, max_length = 5)
 
 ###############################
 # Read classification metrics #
