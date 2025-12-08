@@ -1,5 +1,15 @@
-library(devtools)
-load_all()
+#################
+# Load Packages #
+#################
+
+library(healr)
+# 
+# library(devtools)
+# load_all()
+
+####################################
+# Load data and rename chromosomes #
+####################################
 
 final_list <- read_heal_list("/srv/kenlab/kenji/HE_re_analysis_published/Aled_suecica/HEAL/results/healr/healr_list/")
 
@@ -11,14 +21,22 @@ a_replace <- unique(wa$A.arenosa$bins$chr)
 names(a_replace) <- entries
 for(i in 1:length(entries)){
   wa$A.arenosa$bins$chr[wa$A.arenosa$bins$chr==a_replace[i]] <- rep(as.numeric(entries[i]),sum(wa$A.arenosa$bins$chr==a_replace[i]))
-  
 }
 wa$A.arenosa$bins$chr <- as.numeric(wa$A.arenosa$bins$chr)
 wa$A.arenosa$bins <- data.table::setkey(wa$A.arenosa$bins, chr, start, end, gc_content)
 
 final_list <- wa
 
-#### Try a range of filtering schemes and show the results:####
+
+#########################################################
+# Try a range of filtering schemes and show the results #
+#########################################################
+
+# No filter local 
+filt_aled <- final_list
+cn_aled <- get_copy_number(filt_aled, n_threads = 10, method = "local", full_output =T)
+count_thresh_1_local <- plot_all_bins(cn_aled, view_samples = c("NAT_X_SYN_004", "NAT_X_SYN_051","NAT_X_SYN_042","NAT_X_SYN_054", "NAT_X_SYN_044"), plot_cn = T, method = "local", return_plot = T)
+plot_bins(cn_aled, view_sample = "NAT_X_SYN_042", plot_cn = T, specific_chr = c("1", "6"), method = "local", color_map = c("red2", "blue2"), output_dir = "/srv/kenlab/kenji/exploring_aled_BMC_genomics_paper/diff_filter/no_filter", device = "svg")
 
 # Default local
 filt_aled <- filter_bins(final_list, log_file = "/srv/kenlab/kenji/exploring_aled_BMC_genomics_paper/diff_filter/default_local/filtering.log")
@@ -29,28 +47,27 @@ default_local <- plot_all_bins(cn_aled, view_samples = c("NAT_X_SYN_004", "NAT_X
 # A loss on chromosome 6 A.arenosa for the other sample. 
 # Does not label a gain for chr2 A.arenosa end, but chr2 lower count are in 4 samples of A.thal so it might not be linked...
 # Let's plot 042 chr1 and 6 for the supplementaries:
-plot_bins(cn_aled, view_sample = "NAT_X_SYN_042", plot_cn = T, specific_chr = c("1", "6"), method = "local", color_map = c("red2", "blue2"), output_dir = "/srv/kenlab/kenji/exploring_aled_BMC_genomics_paper/diff_filter/default_local", device = "svg")
+plot_bins(cn_aled, view_sample = "NAT_X_SYN_042", plot_cn = T, specific_chr = c("1", "6"), method = "local", color_map = c("red2", "blue2"))#, output_dir = "/srv/kenlab/kenji/exploring_aled_BMC_genomics_paper/diff_filter/default_local", device = "svg")
 
 
-# Higher count threshold = 3 
-filt_aled <- filter_bins(final_list, count_threshold = 3)
-cn_aled <- get_copy_number(filt_aled, n_threads = 10, method = "local", full_output =T)
-count_thresh_3_local <- plot_all_bins(cn_aled, view_samples = c("NAT_X_SYN_004", "NAT_X_SYN_051","NAT_X_SYN_042","NAT_X_SYN_054", "NAT_X_SYN_044"), plot_cn = T, method = "local", return_plot = T)
+# # Higher count threshold = 3 
+# filt_aled <- filter_bins(final_list, count_threshold = 3)
+# cn_aled <- get_copy_number(filt_aled, n_threads = 10, method = "local", full_output =T)
+# count_thresh_3_local <- plot_all_bins(cn_aled, view_samples = c("NAT_X_SYN_004", "NAT_X_SYN_051","NAT_X_SYN_042","NAT_X_SYN_054", "NAT_X_SYN_044"), plot_cn = T, method = "local", return_plot = T)
 # Same but with some more high short spans (two more on chr3 of A.th)
 
-# Mappability 0.8
-filt_aled <- filter_bins(final_list, mappability_threshold = 0.8, log_file = "/srv/kenlab/kenji/exploring_aled_BMC_genomics_paper/diff_filter/mappa_0.8/filtering.log")
-cn_aled <- get_copy_number(filt_aled, n_threads = 10, method = "local", full_output =T)
-map_08_local <- plot_all_bins(cn_aled, view_samples = c("NAT_X_SYN_004", "NAT_X_SYN_051","NAT_X_SYN_042","NAT_X_SYN_054", "NAT_X_SYN_044"), plot_cn = T, method = "local", return_plot = T)
+# # Mappability 0.8
+# filt_aled <- filter_bins(final_list, mappability_threshold = 0.8, log_file = "/srv/kenlab/kenji/exploring_aled_BMC_genomics_paper/diff_filter/mappa_0.8/filtering.log")
+# cn_aled <- get_copy_number(filt_aled, n_threads = 10, method = "local", full_output =T)
+# map_08_local <- plot_all_bins(cn_aled, view_samples = c("NAT_X_SYN_004", "NAT_X_SYN_051","NAT_X_SYN_042","NAT_X_SYN_054", "NAT_X_SYN_044"), plot_cn = T, method = "local", return_plot = T)
 # More short spans on A.are (all for chr3) but less short spans for A.thal (no more for chr3).
 # BUT all a.thal chr5 have a short span in the centre (centromere) which is not a high count but just a +1
-plot_bins(cn_aled, view_sample = "NAT_X_SYN_042", plot_cn = T, specific_chr = c("1", "6"), method = "local", color_map = c("red2", "blue2"), output_dir = "/srv/kenlab/kenji/exploring_aled_BMC_genomics_paper/diff_filter/mappa_0.8", device = "svg")
 
 
-# Mappability 0.95
-filt_aled <- filter_bins(final_list, mappability_threshold = 0.95)
-cn_aled <- get_copy_number(filt_aled, n_threads = 10, method = "local", full_output =T)
-map_95_local <- plot_all_bins(cn_aled, view_samples = c("NAT_X_SYN_004", "NAT_X_SYN_051","NAT_X_SYN_042","NAT_X_SYN_054", "NAT_X_SYN_044"), plot_cn = T, method = "local", return_plot = T)
+# # Mappability 0.95
+# filt_aled <- filter_bins(final_list, mappability_threshold = 0.95)
+# cn_aled <- get_copy_number(filt_aled, n_threads = 10, method = "local", full_output =T)
+# map_95_local <- plot_all_bins(cn_aled, view_samples = c("NAT_X_SYN_004", "NAT_X_SYN_051","NAT_X_SYN_042","NAT_X_SYN_054", "NAT_X_SYN_044"), plot_cn = T, method = "local", return_plot = T)
 # Only two short spans on chr3 of A.th. 
 # Weird behaviour on chr7 A.are 044 up down, also on chr6 of same sample does down. 
 # The chr2 A.are is showing the gain at the end! 
@@ -58,20 +75,20 @@ map_95_local <- plot_all_bins(cn_aled, view_samples = c("NAT_X_SYN_004", "NAT_X_
 # Also part of chr7 of 051 is lower. 
 # Some gain in two samples for A.are chr5 (seen already above).
 
-# Mappability 0.95, count 3
-filt_aled <- filter_bins(final_list, mappability_threshold = 0.95, count_threshold = 3)
-cn_aled <- get_copy_number(filt_aled, n_threads = 10, method = "local", full_output =T)
-map_95_count_3_local <- plot_all_bins(cn_aled, view_samples = c("NAT_X_SYN_004", "NAT_X_SYN_051","NAT_X_SYN_042","NAT_X_SYN_054", "NAT_X_SYN_044"), plot_cn = T, method = "local", return_plot = T)
-# Almost no short spans execpt 1 on chr 3 of A.thal. 
+##### Mappability 0.95, count 3
+# filt_aled <- filter_bins(final_list, mappability_threshold = 0.95, count_threshold = 3)
+# cn_aled <- get_copy_number(filt_aled, n_threads = 10, method = "local", full_output =T)
+# map_95_count_3_local <- plot_all_bins(cn_aled, view_samples = c("NAT_X_SYN_004", "NAT_X_SYN_051","NAT_X_SYN_042","NAT_X_SYN_054", "NAT_X_SYN_044"), plot_cn = T, method = "local", return_plot = T)
+# Almost no short spans execpt 1 on chr 3 of A.thal.
 # Same chr1 A.th and chr2 A.are as above.
-# Same weird chr 7 A.are and loss on chr6 and loss on chr 7 as above. 
+# Same weird chr 7 A.are and loss on chr6 and loss on chr 7 as above.
 # Same chr5 gain for 004 and 051 as above. 
 
-# Mappability 0.99
-filt_aled <- filter_bins(final_list, mappability_threshold = 0.99, log_file = "/srv/kenlab/kenji/exploring_aled_BMC_genomics_paper/diff_filter/99_mapa/filtering.log")
-cn_aled <- get_copy_number(filt_aled, n_threads = 10, method = "local", full_output =T)
-map_99_local <- plot_all_bins(cn_aled, view_samples = c("NAT_X_SYN_004", "NAT_X_SYN_051","NAT_X_SYN_042","NAT_X_SYN_054", "NAT_X_SYN_044"), plot_cn = T, method = "local", return_plot = T)
-plot_bins(cn_aled, view_sample = "NAT_X_SYN_042", plot_cn = T, specific_chr = c("1", "6"), method = "local", color_map = c("red2", "blue2"), output_dir = "/srv/kenlab/kenji/exploring_aled_BMC_genomics_paper/diff_filter/99_mapa", device = "svg")
+##### Mappability 0.99
+# filt_aled <- filter_bins(final_list, mappability_threshold = 0.99, log_file = "/srv/kenlab/kenji/exploring_aled_BMC_genomics_paper/diff_filter/99_mapa/filtering.log")
+# cn_aled <- get_copy_number(filt_aled, n_threads = 10, method = "local", full_output =T)
+# map_99_local <- plot_all_bins(cn_aled, view_samples = c("NAT_X_SYN_004", "NAT_X_SYN_051","NAT_X_SYN_042","NAT_X_SYN_054", "NAT_X_SYN_044"), plot_cn = T, method = "local", return_plot = T)
+# plot_bins(cn_aled, view_sample = "NAT_X_SYN_042", plot_cn = T, specific_chr = c("1", "6"), method = "local", color_map = c("red2", "blue2"), output_dir = "/srv/kenlab/kenji/exploring_aled_BMC_genomics_paper/diff_filter/99_mapa", device = "svg")
 
 
 # Higher count threshold = 1
@@ -82,14 +99,8 @@ count_thresh_1_local <- plot_all_bins(cn_aled, view_samples = c("NAT_X_SYN_004",
 # Two other short span gains on chr3 A.thal. 
 # The large scale gain on 4 chr5 A.are. 
 # Loss on chr6 A.are
-plot_bins(cn_aled, view_sample = "NAT_X_SYN_042", plot_cn = T, specific_chr = c("1", "6"), method = "local", color_map = c("red2", "blue2"), output_dir = "/srv/kenlab/kenji/exploring_aled_BMC_genomics_paper/diff_filter/count_1", device = "svg")
+plot_bins(cn_aled, view_sample = "NAT_X_SYN_042", plot_cn = T, specific_chr = c("1", "6"), method = "local", color_map = c("red2", "blue2"))#, output_dir = "/srv/kenlab/kenji/exploring_aled_BMC_genomics_paper/diff_filter/count_1", device = "svg")
 
-
-# No filter local 
-filt_aled <- final_list
-cn_aled <- get_copy_number(filt_aled, n_threads = 10, method = "local", full_output =T)
-count_thresh_1_local <- plot_all_bins(cn_aled, view_samples = c("NAT_X_SYN_004", "NAT_X_SYN_051","NAT_X_SYN_042","NAT_X_SYN_054", "NAT_X_SYN_044"), plot_cn = T, method = "local", return_plot = T)
-plot_bins(cn_aled, view_sample = "NAT_X_SYN_042", plot_cn = T, specific_chr = c("1", "6"), method = "local", color_map = c("red2", "blue2"), output_dir = "/srv/kenlab/kenji/exploring_aled_BMC_genomics_paper/diff_filter/no_filter", device = "svg")
 
 # Default non local
 filt_aled <- filter_bins(final_list)
