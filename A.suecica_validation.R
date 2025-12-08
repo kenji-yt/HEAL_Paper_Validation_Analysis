@@ -3,9 +3,6 @@
 #################
 
 library(healr)
-# 
-# library(devtools)
-# load_all()
 
 ####################################
 # Load data and rename chromosomes #
