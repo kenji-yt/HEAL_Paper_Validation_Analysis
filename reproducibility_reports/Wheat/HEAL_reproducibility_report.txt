@@ -1,0 +1,244 @@
+**************
+*    HEAL    *
+**************
+
+
+Reproducibility report for HEAL.
+Run date & time: 2025-12-21 17:06:31
+
+
+********************
+*    Parameters    *
+********************
+
+
+Number of allocated cores: 30
+Input directory: ../DNA
+Bin size: 300000
+Filtering parameters: Default
+Soft clipping: False
+
+
+********************
+* Operating System *
+********************
+
+
+Operating System: Ubuntu
+Version: 24.04.3 LTS (Noble Numbat)
+
+
+**************
+* INPUT DATA *
+**************
+
+
+Linux md5sum checksums for the input files
+polyploids
+sample_H
+-	d41d8cd98f00b204e9800998ecf8427e
+sample_I
+-	d41d8cd98f00b204e9800998ecf8427e
+sample_J
+-	d41d8cd98f00b204e9800998ecf8427e
+progenitors
+A_subgenome
+../DNA/progenitors/A_subgenome/A_subgenome_autosomes.fasta	9dfa849a78ba74c6ee571ccdb150a8b6
+../DNA/progenitors/A_subgenome/A_subgenome_autosomes.fasta.fai	a79cde979ef00e8dc46eb3a58f0e08bc
+../DNA/progenitors/A_subgenome/chromosome_annotation.gff	d803c02bc039b571077800d9a9961848
+D_subgenome
+../DNA/progenitors/D_subgenome/D_subgenome_autosomes.fasta	9bd459f55d465c289f9e6276af238202
+../DNA/progenitors/D_subgenome/D_subgenome_autosomes.fasta.fai	a12583d0cf568c1e723a53b04674294b
+../DNA/progenitors/D_subgenome/chromosome_annotation.gff	353bbfe6f5f98a5c0cbf3ad38fa8b8c8
+Linux md5sum checksums for the input files
+A_subgenome
+../DNA/progenitors/A_subgenome/A_subgenome_autosomes.fasta	9dfa849a78ba74c6ee571ccdb150a8b6
+../DNA/progenitors/A_subgenome/A_subgenome_autosomes.fasta.fai	a79cde979ef00e8dc46eb3a58f0e08bc
+../DNA/progenitors/A_subgenome/chromosome_annotation.gff	d803c02bc039b571077800d9a9961848
+D_subgenome
+../DNA/progenitors/D_subgenome/D_subgenome_autosomes.fasta	9bd459f55d465c289f9e6276af238202
+../DNA/progenitors/D_subgenome/D_subgenome_autosomes.fasta.fai	a12583d0cf568c1e723a53b04674294b
+../DNA/progenitors/D_subgenome/chromosome_annotation.gff	353bbfe6f5f98a5c0cbf3ad38fa8b8c8
+
+
+*********
+* TOOLS *
+*********
+
+
+HEAL=1.0.1
+healr=1.0.0
+Tools used to define bins, count GC content and mappability:
+  - bedtools=2.31.1
+  - samtools=1.21
+  - genmap=1.3.0
+  - seqkit=2.10.0
+Tools used for healr:
+  - git
+  - r-base
+  - r-devtools
+
+snake-EAGLE-RC=1.0.1
+eagle-rc=1.1.3
+General analysis tools used in their snakemake wrappers:
+snakemake wrappers release=3.3.3
+  - MulitQC=1.19
+snakemake wrappers release=4.7.2
+  - star=2.7.11b
+snakemake wrappers release=6.2.0
+  - fastp=0.24.1
+Tool used for sorting bams:
+  - samtools=1.21 
+Tool used for quality assessment of classified bam files:
+  - qualimap=2.2.2
+Tools used to install eagle:
+  - git 
+  - make=4.2.1 
+  - zlib=1.2.13
+  - xz=5.2.4
+  - gcc=15.2.0-16
+  - binutils=2.45
+Tools used for hexaploid read classification:
+  - python=3.9
+  - scipy=1.11.3
+  - numpy=1.26.0
+
+snake-GENESPACE=1.0.1
+- GENESPACE=1.2.3
+- MCScanX=No version, last modified on 2025-12-10 13:12:09.676197170
+  - agat=1.4.0
+  - binutils
+  - bioconductor-biostrings=2.70
+  - bioconductor-rtracklayer=1.62
+  - fastx_toolkit=0.0.14
+  - git
+  - gxx=12.2.0-19)=12.2
+  - make=4.2.1
+  - openjdk=17
+  - orthofinder=2.5.5
+  - perl=5.32.1
+  - r-base=4.3
+  - r-data.table=1.15
+  - r-dbscan=1.1
+  - r-devtools=2.4.5
+  - r-generics=0.1.3
+  - r-ggplot2=3.5.1
+  - r-igraph=2.0.3
+  - r-mass=7.3.60.0.1
+  - r-r.utils=2.12
+  - sed=4.7
+
+
+
+****************
+* OUTPUT FILES *
+****************
+
+
+Linux md5sum checksums for the output files
+results/healr/stats/sample_I/A_subgenome/NC_053028.1/count.csv	2ac317484a59e35740420d5a21c1a904
+results/healr/stats/sample_I/A_subgenome/NC_053028.1/rle.csv	1663a0c28c989c20cdce12acab43b2e6
+results/healr/stats/sample_I/A_subgenome/NC_053022.1/count.csv	2097f8891e5f87eb9932c41e7df2a1d1
+results/healr/stats/sample_I/A_subgenome/NC_053022.1/rle.csv	982908295874c45420136670c4a0115f
+results/healr/stats/sample_I/A_subgenome/NC_053024.1/count.csv	456c5e959563794802b6a9be93c5117b
+results/healr/stats/sample_I/A_subgenome/NC_053024.1/rle.csv	201b249ad115d4c29279dbbd88e12493
+results/healr/stats/sample_I/A_subgenome/NC_053026.1/count.csv	d1f8c0743e72023c99b0cad1746d2a62
+results/healr/stats/sample_I/A_subgenome/NC_053026.1/rle.csv	e450429664772f2ee9435ad8d8e7fb7f
+results/healr/stats/sample_I/A_subgenome/NC_053027.1/count.csv	fece8a3144e03c51027112287a223b2b
+results/healr/stats/sample_I/A_subgenome/NC_053027.1/rle.csv	6d55ab4b0ad9947d074107f9092912ff
+results/healr/stats/sample_I/A_subgenome/NC_053023.1/count.csv	8fd9b24b55acbbe16b7189568fdac5f0
+results/healr/stats/sample_I/A_subgenome/NC_053023.1/rle.csv	52aa583327bc80ccbda9970481fcae52
+results/healr/stats/sample_I/A_subgenome/total_A_subgenome.csv	621af51e06daf2b387c9ce18b85d47ff
+results/healr/stats/sample_I/A_subgenome/NC_053025.1/count.csv	6fcdd9f6662716cd54b20f1fcb3b111d
+results/healr/stats/sample_I/A_subgenome/NC_053025.1/rle.csv	f049bd7dac36e3195f999c887bbbba9d
+results/healr/stats/sample_I/D_subgenome/NC_053035.3/count.csv	764b0657a7af9cdd8771e831b7b39cef
+results/healr/stats/sample_I/D_subgenome/NC_053035.3/rle.csv	746fcf0d7f06d605e1a38be3636309f0
+results/healr/stats/sample_I/D_subgenome/NC_053036.3/count.csv	c2c94d6e0c7b08648014cb29a6f377c0
+results/healr/stats/sample_I/D_subgenome/NC_053036.3/rle.csv	6dd936805776c55dde461c771245e79c
+results/healr/stats/sample_I/D_subgenome/NC_053038.3/count.csv	edb3f2cf1a67d2e2427a4eacadc77baf
+results/healr/stats/sample_I/D_subgenome/NC_053038.3/rle.csv	f0c5b193f19f2d7088981037a1ff35dc
+results/healr/stats/sample_I/D_subgenome/NC_053041.3/count.csv	e9f57e614ab3b5fc677c5caef4d8ea23
+results/healr/stats/sample_I/D_subgenome/NC_053041.3/rle.csv	6c97e577e0f4b7e3b1295429099b1549
+results/healr/stats/sample_I/D_subgenome/NC_053040.3/count.csv	0f092e12a357a3120797708f346e2899
+results/healr/stats/sample_I/D_subgenome/NC_053040.3/rle.csv	fbb96ee270482755365b79d2c307d576
+results/healr/stats/sample_I/D_subgenome/NC_053037.3/count.csv	6c33120acfa04b5cfc9aebc0068d67f4
+results/healr/stats/sample_I/D_subgenome/NC_053037.3/rle.csv	5f6f800cb483cdde2e0928dd38653d6c
+results/healr/stats/sample_I/D_subgenome/NC_053039.3/count.csv	61810bcf5192dbc9f85674963b7bd0d4
+results/healr/stats/sample_I/D_subgenome/NC_053039.3/rle.csv	2d0adcc72d4e3e464614d8120548ad84
+results/healr/stats/sample_I/D_subgenome/total_D_subgenome.csv	440f3f2a7d41c06cf980815b5d9da7af
+results/healr/stats/.snakemake_timestamp	d41d8cd98f00b204e9800998ecf8427e
+results/healr/stats/sample_H/A_subgenome/NC_053028.1/count.csv	a9e9e204ce68291f223be9efb8d944cd
+results/healr/stats/sample_H/A_subgenome/NC_053028.1/rle.csv	ea4bf040acd42a66ddb4caefb5944ad4
+results/healr/stats/sample_H/A_subgenome/NC_053022.1/count.csv	982390e7a020a1eeea97c6f5ca35fa5c
+results/healr/stats/sample_H/A_subgenome/NC_053022.1/rle.csv	5aeb18c315e61dd98982974b8fd8551a
+results/healr/stats/sample_H/A_subgenome/NC_053024.1/count.csv	61e64033c8c83f64a1155c28eeb8806d
+results/healr/stats/sample_H/A_subgenome/NC_053024.1/rle.csv	fe5bf5bed75ea20b617aa42ec7cfa097
+results/healr/stats/sample_H/A_subgenome/NC_053026.1/count.csv	9c5c4b05f14332dde43692f1b86ee6f5
+results/healr/stats/sample_H/A_subgenome/NC_053026.1/rle.csv	cff238631e9d070a398e1536fcceb9ed
+results/healr/stats/sample_H/A_subgenome/NC_053027.1/count.csv	d4a648b7001c7856d08eda1be6e27a56
+results/healr/stats/sample_H/A_subgenome/NC_053027.1/rle.csv	a9f7050d8d5403997ade8434d4b54c81
+results/healr/stats/sample_H/A_subgenome/NC_053023.1/count.csv	bbd3f5dc3c1cb7af8106d03865c25fc1
+results/healr/stats/sample_H/A_subgenome/NC_053023.1/rle.csv	7435eda4e7842996099a96be2d439bb7
+results/healr/stats/sample_H/A_subgenome/total_A_subgenome.csv	e8a3ad6f8ea04107e2ed988f69fd1c71
+results/healr/stats/sample_H/A_subgenome/NC_053025.1/count.csv	6fcdd9f6662716cd54b20f1fcb3b111d
+results/healr/stats/sample_H/A_subgenome/NC_053025.1/rle.csv	f049bd7dac36e3195f999c887bbbba9d
+results/healr/stats/sample_H/D_subgenome/NC_053035.3/count.csv	764b0657a7af9cdd8771e831b7b39cef
+results/healr/stats/sample_H/D_subgenome/NC_053035.3/rle.csv	746fcf0d7f06d605e1a38be3636309f0
+results/healr/stats/sample_H/D_subgenome/NC_053036.3/count.csv	a688ca2a9a18db6dae21112e6f0a1464
+results/healr/stats/sample_H/D_subgenome/NC_053036.3/rle.csv	0d85827311f53d08243d2a076be6d6c1
+results/healr/stats/sample_H/D_subgenome/NC_053038.3/count.csv	58d089e4761a4cad3f7910783bf96614
+results/healr/stats/sample_H/D_subgenome/NC_053038.3/rle.csv	6b78f95d5493f562512f1190e753a847
+results/healr/stats/sample_H/D_subgenome/NC_053041.3/count.csv	ab855ee30aab8699da9f9c121cb28ce4
+results/healr/stats/sample_H/D_subgenome/NC_053041.3/rle.csv	7cd060f0a379b94f4e386bd4327e1456
+results/healr/stats/sample_H/D_subgenome/NC_053040.3/count.csv	f0e1f3fd10a710c871ecdaae4aa58318
+results/healr/stats/sample_H/D_subgenome/NC_053040.3/rle.csv	4628a66a32a4bcce0ea4549ca64ee188
+results/healr/stats/sample_H/D_subgenome/NC_053037.3/count.csv	d73f7dcb6388a8bcd4a62ba2d9902977
+results/healr/stats/sample_H/D_subgenome/NC_053037.3/rle.csv	5e34874dd06ba9836938a1a17f76213b
+results/healr/stats/sample_H/D_subgenome/NC_053039.3/count.csv	ae1802c4ba6c57c385dafcf8fa6b3740
+results/healr/stats/sample_H/D_subgenome/NC_053039.3/rle.csv	07b4e630553b708c89a821b0adb60687
+results/healr/stats/sample_H/D_subgenome/total_D_subgenome.csv	1b9b6d8044110a9d9907aa5f95a59e0c
+results/healr/stats/sample_J/A_subgenome/NC_053028.1/count.csv	478a38b1ae0d3486ae7107588609641a
+results/healr/stats/sample_J/A_subgenome/NC_053028.1/rle.csv	7115ac366a6b043c1c0d874c8d07e310
+results/healr/stats/sample_J/A_subgenome/NC_053022.1/count.csv	91e84f0b4201e5f2b1fe4069229268cf
+results/healr/stats/sample_J/A_subgenome/NC_053022.1/rle.csv	b758dc38a010bc924d9d95c4da7be534
+results/healr/stats/sample_J/A_subgenome/NC_053024.1/count.csv	391d318b2a87a8b98bbb0ea6efcc49f1
+results/healr/stats/sample_J/A_subgenome/NC_053024.1/rle.csv	f4eee04393ae4c83ea74323d127c26fd
+results/healr/stats/sample_J/A_subgenome/NC_053026.1/count.csv	4aa146b948ffca6dbbbe47a43085aa39
+results/healr/stats/sample_J/A_subgenome/NC_053026.1/rle.csv	8efd5ddcc4250e20ef8be4c835ea72a5
+results/healr/stats/sample_J/A_subgenome/NC_053027.1/count.csv	fece8a3144e03c51027112287a223b2b
+results/healr/stats/sample_J/A_subgenome/NC_053027.1/rle.csv	6d55ab4b0ad9947d074107f9092912ff
+results/healr/stats/sample_J/A_subgenome/NC_053023.1/count.csv	e51433947f006889705c8c0bf8601389
+results/healr/stats/sample_J/A_subgenome/NC_053023.1/rle.csv	f203e0fb223a3b850a3e84a18f2845bd
+results/healr/stats/sample_J/A_subgenome/total_A_subgenome.csv	5880431951e208ff33cfd510dfc1314d
+results/healr/stats/sample_J/A_subgenome/NC_053025.1/count.csv	cda4b9058c3269bcead885771f208d59
+results/healr/stats/sample_J/A_subgenome/NC_053025.1/rle.csv	dc726fe11d19c4ea67264c48068274b6
+results/healr/stats/sample_J/D_subgenome/NC_053035.3/count.csv	68e43c3921d473cfca5e6e9242819677
+results/healr/stats/sample_J/D_subgenome/NC_053035.3/rle.csv	cc588eef2d8f5a140ce5fc4094284d42
+results/healr/stats/sample_J/D_subgenome/NC_053036.3/count.csv	30a6086504b55e6f0e593efdbbd5bbc9
+results/healr/stats/sample_J/D_subgenome/NC_053036.3/rle.csv	2baee33ca1a54939e9c6ecf574d63742
+results/healr/stats/sample_J/D_subgenome/NC_053038.3/count.csv	58d089e4761a4cad3f7910783bf96614
+results/healr/stats/sample_J/D_subgenome/NC_053038.3/rle.csv	6b78f95d5493f562512f1190e753a847
+results/healr/stats/sample_J/D_subgenome/NC_053041.3/count.csv	d68c65179adca157df118079c737071b
+results/healr/stats/sample_J/D_subgenome/NC_053041.3/rle.csv	ead4e3e603b2316dde3dcdda68cd9d1b
+results/healr/stats/sample_J/D_subgenome/NC_053040.3/count.csv	0f092e12a357a3120797708f346e2899
+results/healr/stats/sample_J/D_subgenome/NC_053040.3/rle.csv	fbb96ee270482755365b79d2c307d576
+results/healr/stats/sample_J/D_subgenome/NC_053037.3/count.csv	7da5f3fb416b4ac3f36b2f7e99189ad0
+results/healr/stats/sample_J/D_subgenome/NC_053037.3/rle.csv	5cc770d68c74137dd7fc020a138010c9
+results/healr/stats/sample_J/D_subgenome/NC_053039.3/count.csv	45ca7d98db338eaf8fd029546a081818
+results/healr/stats/sample_J/D_subgenome/NC_053039.3/rle.csv	9888fb37753e8e163cea2a90fbbbe2f0
+results/healr/stats/sample_J/D_subgenome/total_D_subgenome.csv	530d8d281f2ed0ea051b156d46e55dfc
+
+results/MultiQC/multiqc_report.html	8c1e4df270d779c53646f07837ba996a
+results/eagle_rc/sample_I/sample_I_classified_D_subgenome.ref.bam	e8792a7e8c70b411e9e1d950e55f101f
+results/eagle_rc/sample_I/sample_I_classified_A_subgenome.ref.bam	b78850306b1dc672ef0d5ca1ebc4d731
+results/eagle_rc/sample_H/sample_H_classified_A_subgenome.ref.bam	4884788068f13af8459e6a5c78a32a05
+results/eagle_rc/sample_H/sample_H_classified_D_subgenome.ref.bam	418032818bd181ea8f53ac787e388c8e
+results/eagle_rc/sample_J/sample_J_classified_D_subgenome.ref.bam	ffec67e5617b26404c9d82b6aaef7176
+results/eagle_rc/sample_J/sample_J_classified_A_subgenome.ref.bam	a160f0332cccdefbf25afaccdd92c68b
+
+results/genespace/run_dir/bed/D_subgenome.bed	dffb405f5b4528b31b4901a4c89f5047
+results/genespace/run_dir/bed/A_subgenome.bed	53eca645503ff3f94ac07186aacdb1f3
+results/genespace/run_dir/peptide/A_subgenome.fa	d831a8b2954c8be605de1ea88a619c2a
+results/genespace/run_dir/peptide/D_subgenome.fa	2a3c4da07d1e232f315f56bf41569913
+results/genespace/run_dir/results/syntenicBlock_coordinates.csv	3bea0e358844c297088d063c38c22d2f
+results/genespace/run_dir/results/syntenicRegion_coordinates.csv	447ae714994bb1db8e351da817fa40c7

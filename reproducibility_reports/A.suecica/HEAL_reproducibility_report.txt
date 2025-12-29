@@ -1,0 +1,310 @@
+**************
+*    HEAL    *
+**************
+
+
+Reproducibility report for HEAL.
+Run date & time: 2025-12-09 20:34:48
+
+
+********************
+*    Parameters    *
+********************
+
+
+Number of allocated cores: 10
+Input directory: ../DNA
+Bin size: 100000
+Filtering parameters: Default
+Soft clipping: False
+
+
+********************
+* Operating System *
+********************
+
+
+Operating System: Debian GNU/Linux
+Version: 12 (bookworm)
+
+
+**************
+* INPUT DATA *
+**************
+
+
+Linux md5sum checksums for the input files
+polyploids
+NAT_X_SYN_004
+-	d41d8cd98f00b204e9800998ecf8427e
+NAT_X_SYN_042
+-	d41d8cd98f00b204e9800998ecf8427e
+NAT_X_SYN_044
+-	d41d8cd98f00b204e9800998ecf8427e
+NAT_X_SYN_051
+-	d41d8cd98f00b204e9800998ecf8427e
+NAT_X_SYN_054
+-	d41d8cd98f00b204e9800998ecf8427e
+progenitors
+A.arenosa
+../DNA/progenitors/A.arenosa/shortened_names.fasta	2c25e6fb7e5ca05ebb77f5819f46351d
+../DNA/progenitors/A.arenosa/shortened_names.fasta.fai	5974e4575804627747acb7f89a22d87a
+../DNA/progenitors/A.arenosa/kot_in_gain_sa.sh	7622f0f0e41d8c9226ad236b52b690df
+../DNA/progenitors/A.arenosa/shortened_names.fasta.index	fb743fc52ab9d7a92f04e7e7ff9eff7d
+../DNA/progenitors/A.arenosa/genomic.gff	42c27c98c70018293fa3c618bdaf5bdc
+A.thaliana
+../DNA/progenitors/A.thaliana/filtered.gff	56b1838fb32b216b3be654fd661a26e4
+../DNA/progenitors/A.thaliana/filtered_renamed.fa.fai	1ac0e0d2bace5da3e35262ad121920a6
+../DNA/progenitors/A.thaliana/filtered_renamed.fa.index	d9e8fb319357abfb44eefc6e6d422750
+../DNA/progenitors/A.thaliana/filtered_renamed.fa	65e061c95da29fa8144d090e16b4a629
+../DNA/progenitors/A.thaliana/renaming_procedure.sh	c857627d6868ddcaa4e3bd82819718db
+Linux md5sum checksums for the input files
+A.arenosa
+../DNA/progenitors/A.arenosa/shortened_names.fasta	2c25e6fb7e5ca05ebb77f5819f46351d
+../DNA/progenitors/A.arenosa/shortened_names.fasta.fai	5974e4575804627747acb7f89a22d87a
+../DNA/progenitors/A.arenosa/kot_in_gain_sa.sh	7622f0f0e41d8c9226ad236b52b690df
+../DNA/progenitors/A.arenosa/shortened_names.fasta.index	fb743fc52ab9d7a92f04e7e7ff9eff7d
+../DNA/progenitors/A.arenosa/genomic.gff	42c27c98c70018293fa3c618bdaf5bdc
+A.thaliana
+../DNA/progenitors/A.thaliana/filtered.gff	56b1838fb32b216b3be654fd661a26e4
+../DNA/progenitors/A.thaliana/filtered_renamed.fa.fai	1ac0e0d2bace5da3e35262ad121920a6
+../DNA/progenitors/A.thaliana/filtered_renamed.fa.index	d9e8fb319357abfb44eefc6e6d422750
+../DNA/progenitors/A.thaliana/filtered_renamed.fa	65e061c95da29fa8144d090e16b4a629
+../DNA/progenitors/A.thaliana/renaming_procedure.sh	c857627d6868ddcaa4e3bd82819718db
+
+
+*********
+* TOOLS *
+*********
+
+
+HEAL=1.0.1
+healr=1.0.0
+Tools used to define bins, count GC content and mappability:
+  - bedtools=2.31.1
+  - samtools=1.21
+  - genmap=1.3.0
+  - seqkit=2.10.0
+Tools used for healr:
+  - git
+  - r-base
+  - r-devtools
+
+snake-EAGLE-RC=1.0.1
+eagle-rc=1.1.3
+General analysis tools used in their snakemake wrappers:
+snakemake wrappers release=3.3.3
+  - MulitQC=1.19
+snakemake wrappers release=4.7.2
+  - star=2.7.11b
+snakemake wrappers release=6.2.0
+  - fastp=0.24.1
+Tool used for sorting bams:
+  - samtools=1.21 
+Tool used for quality assessment of classified bam files:
+  - qualimap=2.2.2
+Tools used to install eagle:
+  - git 
+  - make=4.2.1 
+  - zlib=1.2.13
+  - xz=5.2.4
+  - gcc=15.2.0-16
+  - binutils=2.45
+Tools used for hexaploid read classification:
+  - python=3.9
+  - scipy=1.11.3
+  - numpy=1.26.0
+
+snake-GENESPACE=1.0.1
+- GENESPACE=1.2.3
+- MCScanX=No version, last modified on 2025-12-09 14:56:09.428394347
+  - agat=1.4.0
+  - binutils
+  - bioconductor-biostrings=2.70
+  - bioconductor-rtracklayer=1.62
+  - fastx_toolkit=0.0.14
+  - git
+  - gxx=12.2.0-19)=12.2
+  - make=4.2.1
+  - openjdk=17
+  - orthofinder=2.5.5
+  - perl=5.32.1
+  - r-base=4.3
+  - r-data.table=1.15
+  - r-dbscan=1.1
+  - r-devtools=2.4.5
+  - r-generics=0.1.3
+  - r-ggplot2=3.5.1
+  - r-igraph=2.0.3
+  - r-mass=7.3.60.0.1
+  - r-r.utils=2.12
+  - sed=4.7
+
+
+
+****************
+* OUTPUT FILES *
+****************
+
+
+Linux md5sum checksums for the output files
+results/healr/stats/NAT_X_SYN_051/A.thaliana/1/rle.csv	e6a6d0a0247ca28da80a0d1cc537fd3f
+results/healr/stats/NAT_X_SYN_051/A.thaliana/1/count.csv	e4176266b1f4bba05bbe628f124cce6c
+results/healr/stats/NAT_X_SYN_051/A.thaliana/2/rle.csv	3c14ff93c90e15824f489f4ba70fde22
+results/healr/stats/NAT_X_SYN_051/A.thaliana/2/count.csv	dd094218ba4939a4bd93657c465513cf
+results/healr/stats/NAT_X_SYN_051/A.thaliana/3/rle.csv	6c5962174bd45fef77676e9d58f9fed2
+results/healr/stats/NAT_X_SYN_051/A.thaliana/3/count.csv	69fd8d1a70302942c04058a9bdaeb960
+results/healr/stats/NAT_X_SYN_051/A.thaliana/4/rle.csv	c8935b78dd4f65b63e8575218265b8c9
+results/healr/stats/NAT_X_SYN_051/A.thaliana/4/count.csv	9a44dd66729d664dcd8bb2a865330d8d
+results/healr/stats/NAT_X_SYN_051/A.thaliana/total_A.thaliana.csv	15829248b6c5444c65bc024ed9e53717
+results/healr/stats/NAT_X_SYN_051/A.thaliana/5/rle.csv	a894b072c4aa5d672e90a5f489e95d8e
+results/healr/stats/NAT_X_SYN_051/A.thaliana/5/count.csv	e6f0416e9b7b1e59dcccc078ff194b83
+results/healr/stats/NAT_X_SYN_051/A.arenosa/total_A.arenosa.csv	4537062ef27ee6f22b480343893b6af6
+results/healr/stats/NAT_X_SYN_051/A.arenosa/LR999451.1/rle.csv	d2646aaa30cd3dabb64d6ae8a02ec3b9
+results/healr/stats/NAT_X_SYN_051/A.arenosa/LR999451.1/count.csv	a29a2722611f4472dde7034a29454adf
+results/healr/stats/NAT_X_SYN_051/A.arenosa/LR999456.1/rle.csv	aa636446a65bce4cbdb0fb8a7259013b
+results/healr/stats/NAT_X_SYN_051/A.arenosa/LR999456.1/count.csv	8e218dbb7ce3a5100211ce1b124c624e
+results/healr/stats/NAT_X_SYN_051/A.arenosa/LR999453.1/rle.csv	3bd89d59b04cb484088386625a79cc41
+results/healr/stats/NAT_X_SYN_051/A.arenosa/LR999453.1/count.csv	8fea8a67b5b3d505ee32743f8b9fe4a0
+results/healr/stats/NAT_X_SYN_051/A.arenosa/LR999458.1/rle.csv	4693e19706fb76ea66c40750fa763760
+results/healr/stats/NAT_X_SYN_051/A.arenosa/LR999458.1/count.csv	c1c14a8080b4290cadfa5ce84aecc9f9
+results/healr/stats/NAT_X_SYN_051/A.arenosa/LR999454.1/rle.csv	9863f8d5d7e8609fecb2a9878079e32c
+results/healr/stats/NAT_X_SYN_051/A.arenosa/LR999454.1/count.csv	ae89a130569a8f5495735df1ce06a054
+results/healr/stats/NAT_X_SYN_051/A.arenosa/LR999457.1/rle.csv	839cf46f22612562803d67906167b4b9
+results/healr/stats/NAT_X_SYN_051/A.arenosa/LR999457.1/count.csv	2f654203582c74472066df94651d42fa
+results/healr/stats/NAT_X_SYN_051/A.arenosa/LR999452.1/rle.csv	275e01ba243e1b36304fb3391c1473c2
+results/healr/stats/NAT_X_SYN_051/A.arenosa/LR999452.1/count.csv	0e53cca395e7a97b7a127620b715bf5a
+results/healr/stats/NAT_X_SYN_051/A.arenosa/LR999455.1/rle.csv	a0c8e667f1b7f77b69bb27d00eb938f5
+results/healr/stats/NAT_X_SYN_051/A.arenosa/LR999455.1/count.csv	063dbecd46300547818b2d4def02010a
+results/healr/stats/NAT_X_SYN_004/A.thaliana/1/rle.csv	decb8711833b78f41ed0646b2a44c204
+results/healr/stats/NAT_X_SYN_004/A.thaliana/1/count.csv	027db11f028d2c624b5622b248185fd2
+results/healr/stats/NAT_X_SYN_004/A.thaliana/2/rle.csv	3c14ff93c90e15824f489f4ba70fde22
+results/healr/stats/NAT_X_SYN_004/A.thaliana/2/count.csv	dd094218ba4939a4bd93657c465513cf
+results/healr/stats/NAT_X_SYN_004/A.thaliana/3/rle.csv	f379391d1939068b5152de68a8d3296c
+results/healr/stats/NAT_X_SYN_004/A.thaliana/3/count.csv	2dc544bcff3357612bc89488a62e1a76
+results/healr/stats/NAT_X_SYN_004/A.thaliana/4/rle.csv	e8e2a69c942beb6a20bfc4c92a16ee6d
+results/healr/stats/NAT_X_SYN_004/A.thaliana/4/count.csv	3ca8997fc0d1d0d44c1de5fb2c612289
+results/healr/stats/NAT_X_SYN_004/A.thaliana/total_A.thaliana.csv	c5f3d9c995441e32981c845080e901d2
+results/healr/stats/NAT_X_SYN_004/A.thaliana/5/rle.csv	a894b072c4aa5d672e90a5f489e95d8e
+results/healr/stats/NAT_X_SYN_004/A.thaliana/5/count.csv	e6f0416e9b7b1e59dcccc078ff194b83
+results/healr/stats/NAT_X_SYN_004/A.arenosa/total_A.arenosa.csv	e47798253deb28e9135a412a08b7c9ef
+results/healr/stats/NAT_X_SYN_004/A.arenosa/LR999451.1/rle.csv	bc68c0084fe7ae6c9c061406b5c697d6
+results/healr/stats/NAT_X_SYN_004/A.arenosa/LR999451.1/count.csv	03504feca7e5e6d907c70647aa1826c9
+results/healr/stats/NAT_X_SYN_004/A.arenosa/LR999456.1/rle.csv	b4fb9c7516831b14ad941f7968f0107e
+results/healr/stats/NAT_X_SYN_004/A.arenosa/LR999456.1/count.csv	375f53a5bbb9866b22ff5786b26e19a0
+results/healr/stats/NAT_X_SYN_004/A.arenosa/LR999453.1/rle.csv	ea15b2fc1eaf04e36304913b7df4ee86
+results/healr/stats/NAT_X_SYN_004/A.arenosa/LR999453.1/count.csv	a0b8ec4e4a9e4c75b7f53338f19add4f
+results/healr/stats/NAT_X_SYN_004/A.arenosa/LR999458.1/rle.csv	4693e19706fb76ea66c40750fa763760
+results/healr/stats/NAT_X_SYN_004/A.arenosa/LR999458.1/count.csv	c1c14a8080b4290cadfa5ce84aecc9f9
+results/healr/stats/NAT_X_SYN_004/A.arenosa/LR999454.1/rle.csv	9863f8d5d7e8609fecb2a9878079e32c
+results/healr/stats/NAT_X_SYN_004/A.arenosa/LR999454.1/count.csv	ae89a130569a8f5495735df1ce06a054
+results/healr/stats/NAT_X_SYN_004/A.arenosa/LR999457.1/rle.csv	518458afa1aa69c03e7528472f7c7da9
+results/healr/stats/NAT_X_SYN_004/A.arenosa/LR999457.1/count.csv	d9cc55422a3848b9de44c7cd4b6031b3
+results/healr/stats/NAT_X_SYN_004/A.arenosa/LR999452.1/rle.csv	ccf5ebfaeaad990fd3874fa2b9168aab
+results/healr/stats/NAT_X_SYN_004/A.arenosa/LR999452.1/count.csv	4a7c6e536930408cfae2077105db24c1
+results/healr/stats/NAT_X_SYN_004/A.arenosa/LR999455.1/rle.csv	aa3b27f853f15537b0e5b54a1b50206f
+results/healr/stats/NAT_X_SYN_004/A.arenosa/LR999455.1/count.csv	baeeba3067a620d777df8843eacee9cb
+results/healr/stats/NAT_X_SYN_044/A.thaliana/1/rle.csv	39b4f7124c6b866c1b5980b572f670b0
+results/healr/stats/NAT_X_SYN_044/A.thaliana/1/count.csv	081c85be4b3f4ea3df3b64b79dab556d
+results/healr/stats/NAT_X_SYN_044/A.thaliana/2/rle.csv	3c14ff93c90e15824f489f4ba70fde22
+results/healr/stats/NAT_X_SYN_044/A.thaliana/2/count.csv	dd094218ba4939a4bd93657c465513cf
+results/healr/stats/NAT_X_SYN_044/A.thaliana/3/rle.csv	b8e2ebc0561f6a5df9fad049a068cd15
+results/healr/stats/NAT_X_SYN_044/A.thaliana/3/count.csv	c46f0ab8f5ef2b839b52bd07a681041d
+results/healr/stats/NAT_X_SYN_044/A.thaliana/4/rle.csv	e8e2a69c942beb6a20bfc4c92a16ee6d
+results/healr/stats/NAT_X_SYN_044/A.thaliana/4/count.csv	3ca8997fc0d1d0d44c1de5fb2c612289
+results/healr/stats/NAT_X_SYN_044/A.thaliana/total_A.thaliana.csv	d5cec2bccda4b8a4ec8d3ea668b0bf32
+results/healr/stats/NAT_X_SYN_044/A.thaliana/5/rle.csv	4b9d07af4836a3c98e9593e7a99bef67
+results/healr/stats/NAT_X_SYN_044/A.thaliana/5/count.csv	4b20935ac8801dca0c41c1f46dd88415
+results/healr/stats/NAT_X_SYN_044/A.arenosa/total_A.arenosa.csv	49ccf13075595b8a5ec8841f5b0f9350
+results/healr/stats/NAT_X_SYN_044/A.arenosa/LR999451.1/rle.csv	dcfce92326d451aeaa290ec0b47d032e
+results/healr/stats/NAT_X_SYN_044/A.arenosa/LR999451.1/count.csv	ccb1d7460f5ae49ca9c7a42fd4d2f644
+results/healr/stats/NAT_X_SYN_044/A.arenosa/LR999456.1/rle.csv	4f9e7aa0f84e8db81125364b2f120475
+results/healr/stats/NAT_X_SYN_044/A.arenosa/LR999456.1/count.csv	aa4ea675616c4cf7ecb59da30f923027
+results/healr/stats/NAT_X_SYN_044/A.arenosa/LR999453.1/rle.csv	ea15b2fc1eaf04e36304913b7df4ee86
+results/healr/stats/NAT_X_SYN_044/A.arenosa/LR999453.1/count.csv	a0b8ec4e4a9e4c75b7f53338f19add4f
+results/healr/stats/NAT_X_SYN_044/A.arenosa/LR999458.1/rle.csv	70f31ec96602118966dd2a5ec6b0297d
+results/healr/stats/NAT_X_SYN_044/A.arenosa/LR999458.1/count.csv	e54a4f49f7078fc68e8f764448fe660b
+results/healr/stats/NAT_X_SYN_044/A.arenosa/LR999454.1/rle.csv	9863f8d5d7e8609fecb2a9878079e32c
+results/healr/stats/NAT_X_SYN_044/A.arenosa/LR999454.1/count.csv	ae89a130569a8f5495735df1ce06a054
+results/healr/stats/NAT_X_SYN_044/A.arenosa/LR999457.1/rle.csv	afa902a6e340e0c6ab7a0f994cda1ca2
+results/healr/stats/NAT_X_SYN_044/A.arenosa/LR999457.1/count.csv	08eb7e6c6a822c0ec14e9e4c6489bb57
+results/healr/stats/NAT_X_SYN_044/A.arenosa/LR999452.1/rle.csv	ccf5ebfaeaad990fd3874fa2b9168aab
+results/healr/stats/NAT_X_SYN_044/A.arenosa/LR999452.1/count.csv	4a7c6e536930408cfae2077105db24c1
+results/healr/stats/NAT_X_SYN_044/A.arenosa/LR999455.1/rle.csv	f94bd4b41e185be2c7c77a1df0b731dc
+results/healr/stats/NAT_X_SYN_044/A.arenosa/LR999455.1/count.csv	5d27b592271ee9c8e8891a674b0e70f1
+results/healr/stats/NAT_X_SYN_054/A.thaliana/1/rle.csv	39b4f7124c6b866c1b5980b572f670b0
+results/healr/stats/NAT_X_SYN_054/A.thaliana/1/count.csv	081c85be4b3f4ea3df3b64b79dab556d
+results/healr/stats/NAT_X_SYN_054/A.thaliana/2/rle.csv	3c14ff93c90e15824f489f4ba70fde22
+results/healr/stats/NAT_X_SYN_054/A.thaliana/2/count.csv	dd094218ba4939a4bd93657c465513cf
+results/healr/stats/NAT_X_SYN_054/A.thaliana/3/rle.csv	e4482d38fd8119e20dabbd635a16e1c4
+results/healr/stats/NAT_X_SYN_054/A.thaliana/3/count.csv	e3045dc84ceb4041e386e87caf25966b
+results/healr/stats/NAT_X_SYN_054/A.thaliana/4/rle.csv	e8e2a69c942beb6a20bfc4c92a16ee6d
+results/healr/stats/NAT_X_SYN_054/A.thaliana/4/count.csv	3ca8997fc0d1d0d44c1de5fb2c612289
+results/healr/stats/NAT_X_SYN_054/A.thaliana/total_A.thaliana.csv	a514d7455162f83023bcc7c3d3c45f38
+results/healr/stats/NAT_X_SYN_054/A.thaliana/5/rle.csv	5495fe50ff1889edab7140e172eb275d
+results/healr/stats/NAT_X_SYN_054/A.thaliana/5/count.csv	f0bd2e84f66524c9fe30ad3a73cea980
+results/healr/stats/NAT_X_SYN_054/A.arenosa/total_A.arenosa.csv	496580fc4d49c045225d40e8d4c04151
+results/healr/stats/NAT_X_SYN_054/A.arenosa/LR999451.1/rle.csv	dcfce92326d451aeaa290ec0b47d032e
+results/healr/stats/NAT_X_SYN_054/A.arenosa/LR999451.1/count.csv	ccb1d7460f5ae49ca9c7a42fd4d2f644
+results/healr/stats/NAT_X_SYN_054/A.arenosa/LR999456.1/rle.csv	b4fb9c7516831b14ad941f7968f0107e
+results/healr/stats/NAT_X_SYN_054/A.arenosa/LR999456.1/count.csv	375f53a5bbb9866b22ff5786b26e19a0
+results/healr/stats/NAT_X_SYN_054/A.arenosa/LR999453.1/rle.csv	ea15b2fc1eaf04e36304913b7df4ee86
+results/healr/stats/NAT_X_SYN_054/A.arenosa/LR999453.1/count.csv	a0b8ec4e4a9e4c75b7f53338f19add4f
+results/healr/stats/NAT_X_SYN_054/A.arenosa/LR999458.1/rle.csv	4567ccdd3028cf888b75420264fe9c89
+results/healr/stats/NAT_X_SYN_054/A.arenosa/LR999458.1/count.csv	622c509d06d3d9753b1197600ee336b5
+results/healr/stats/NAT_X_SYN_054/A.arenosa/LR999454.1/rle.csv	9863f8d5d7e8609fecb2a9878079e32c
+results/healr/stats/NAT_X_SYN_054/A.arenosa/LR999454.1/count.csv	ae89a130569a8f5495735df1ce06a054
+results/healr/stats/NAT_X_SYN_054/A.arenosa/LR999457.1/rle.csv	518458afa1aa69c03e7528472f7c7da9
+results/healr/stats/NAT_X_SYN_054/A.arenosa/LR999457.1/count.csv	d9cc55422a3848b9de44c7cd4b6031b3
+results/healr/stats/NAT_X_SYN_054/A.arenosa/LR999452.1/rle.csv	ccf5ebfaeaad990fd3874fa2b9168aab
+results/healr/stats/NAT_X_SYN_054/A.arenosa/LR999452.1/count.csv	4a7c6e536930408cfae2077105db24c1
+results/healr/stats/NAT_X_SYN_054/A.arenosa/LR999455.1/rle.csv	616d63139814a841964b6bb6371e877f
+results/healr/stats/NAT_X_SYN_054/A.arenosa/LR999455.1/count.csv	850208940e7c13d9a897fc547917a24e
+results/healr/stats/.snakemake_timestamp	d41d8cd98f00b204e9800998ecf8427e
+results/healr/stats/NAT_X_SYN_042/A.thaliana/1/rle.csv	eed059f45b3f8df224c1bc6b0a5ba8a9
+results/healr/stats/NAT_X_SYN_042/A.thaliana/1/count.csv	c99e13ae26edebb6ca4810673565c2f0
+results/healr/stats/NAT_X_SYN_042/A.thaliana/2/rle.csv	7e22a24357f6ead99fc42f08f1c91e2a
+results/healr/stats/NAT_X_SYN_042/A.thaliana/2/count.csv	d2c9cdaf809385487daff765fd1caf30
+results/healr/stats/NAT_X_SYN_042/A.thaliana/3/rle.csv	2a4b30209ad673eea981e639fbdfca19
+results/healr/stats/NAT_X_SYN_042/A.thaliana/3/count.csv	ac79e468150d9e7724e0bd113f8ec2e1
+results/healr/stats/NAT_X_SYN_042/A.thaliana/4/rle.csv	c8935b78dd4f65b63e8575218265b8c9
+results/healr/stats/NAT_X_SYN_042/A.thaliana/4/count.csv	9a44dd66729d664dcd8bb2a865330d8d
+results/healr/stats/NAT_X_SYN_042/A.thaliana/total_A.thaliana.csv	c4994e7a9235ee45d607568779722cb5
+results/healr/stats/NAT_X_SYN_042/A.thaliana/5/rle.csv	a894b072c4aa5d672e90a5f489e95d8e
+results/healr/stats/NAT_X_SYN_042/A.thaliana/5/count.csv	e6f0416e9b7b1e59dcccc078ff194b83
+results/healr/stats/NAT_X_SYN_042/A.arenosa/total_A.arenosa.csv	76c28ea3670818d5505f34080f5a9043
+results/healr/stats/NAT_X_SYN_042/A.arenosa/LR999451.1/rle.csv	5ad34ae03bc123510f0e6062270cef29
+results/healr/stats/NAT_X_SYN_042/A.arenosa/LR999451.1/count.csv	a8e403530d7cb9de996fbb310e4bcce8
+results/healr/stats/NAT_X_SYN_042/A.arenosa/LR999456.1/rle.csv	aa636446a65bce4cbdb0fb8a7259013b
+results/healr/stats/NAT_X_SYN_042/A.arenosa/LR999456.1/count.csv	8e218dbb7ce3a5100211ce1b124c624e
+results/healr/stats/NAT_X_SYN_042/A.arenosa/LR999453.1/rle.csv	19d8c0c7b4ba75fec842385cbe49db97
+results/healr/stats/NAT_X_SYN_042/A.arenosa/LR999453.1/count.csv	d26f0ce1721c87afa6ffe38d321d3cad
+results/healr/stats/NAT_X_SYN_042/A.arenosa/LR999458.1/rle.csv	4693e19706fb76ea66c40750fa763760
+results/healr/stats/NAT_X_SYN_042/A.arenosa/LR999458.1/count.csv	c1c14a8080b4290cadfa5ce84aecc9f9
+results/healr/stats/NAT_X_SYN_042/A.arenosa/LR999454.1/rle.csv	9863f8d5d7e8609fecb2a9878079e32c
+results/healr/stats/NAT_X_SYN_042/A.arenosa/LR999454.1/count.csv	ae89a130569a8f5495735df1ce06a054
+results/healr/stats/NAT_X_SYN_042/A.arenosa/LR999457.1/rle.csv	839cf46f22612562803d67906167b4b9
+results/healr/stats/NAT_X_SYN_042/A.arenosa/LR999457.1/count.csv	2f654203582c74472066df94651d42fa
+results/healr/stats/NAT_X_SYN_042/A.arenosa/LR999452.1/rle.csv	ccf5ebfaeaad990fd3874fa2b9168aab
+results/healr/stats/NAT_X_SYN_042/A.arenosa/LR999452.1/count.csv	4a7c6e536930408cfae2077105db24c1
+results/healr/stats/NAT_X_SYN_042/A.arenosa/LR999455.1/rle.csv	62118bc2c3bce393030d320dd4195be7
+results/healr/stats/NAT_X_SYN_042/A.arenosa/LR999455.1/count.csv	862d5774078f1fa5bbaa4379f3e08f2c
+
+results/MultiQC/multiqc_report.html	5e61f959ec9b8f429066b48337c4a48d
+results/eagle_rc/NAT_X_SYN_051/NAT_X_SYN_051_classified_A.arenosa.ref.bam	73affec629dda50c0a497c094d7e2ff9
+results/eagle_rc/NAT_X_SYN_051/NAT_X_SYN_051_classified_A.thaliana.ref.bam	ee164afdf0ca4db96f727d2bb874da2a
+results/eagle_rc/NAT_X_SYN_004/NAT_X_SYN_004_classified_A.thaliana.ref.bam	1162cd55717a0c1d309cdbea8452ddde
+results/eagle_rc/NAT_X_SYN_004/NAT_X_SYN_004_classified_A.arenosa.ref.bam	b2618f4f1d8176bca02c4f00a42d40e8
+results/eagle_rc/NAT_X_SYN_044/NAT_X_SYN_044_classified_A.arenosa.ref.bam	1fa3b37ac2fbb4f529855350f3d31761
+results/eagle_rc/NAT_X_SYN_044/NAT_X_SYN_044_classified_A.thaliana.ref.bam	dc73f499f580c1087ea6f2b39ef8f89a
+results/eagle_rc/NAT_X_SYN_054/NAT_X_SYN_054_classified_A.arenosa.ref.bam	a9988065ff8c6f62372c448261b1a192
+results/eagle_rc/NAT_X_SYN_054/NAT_X_SYN_054_classified_A.thaliana.ref.bam	81a3821211fbe4a9faa718abef04c9f6
+results/eagle_rc/NAT_X_SYN_042/NAT_X_SYN_042_classified_A.thaliana.ref.bam	d2e88793fc89f30974aae83578efc1aa
+results/eagle_rc/NAT_X_SYN_042/NAT_X_SYN_042_classified_A.arenosa.ref.bam	d4ee5708a8373017a4f8f1e343bdc25c
+
+results/genespace/run_dir/bed/A.thaliana.bed	7124cd5cb3ef24ce7ae05cde40e4c79e
+results/genespace/run_dir/bed/A.arenosa.bed	344279002e4db6eaf3120c608dacb89b
+results/genespace/run_dir/peptide/A.thaliana.fa	6408920f404d71bed55f4d2255e8718f
+results/genespace/run_dir/peptide/A.arenosa.fa	98494bb4c9d73e177ea0cc9ac3535415
+results/genespace/run_dir/results/syntenicRegion_coordinates.csv	d80f2ebff21463511364f41c61902138
+results/genespace/run_dir/results/syntenicBlock_coordinates.csv	63f7b54151bbc1614bd38e4ca29c5ac9

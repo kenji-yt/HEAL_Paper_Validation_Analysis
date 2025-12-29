@@ -1,0 +1,258 @@
+**************
+*    HEAL    *
+**************
+
+
+Reproducibility report for HEAL.
+Run date & time: 2025-12-23 15:56:51
+
+
+********************
+*    Parameters    *
+********************
+
+
+Number of allocated cores: 15
+Input directory: ../WGBS
+Bin size: 20000
+Filtering parameters: Default
+Soft clipping: False
+
+
+********************
+* Operating System *
+********************
+
+
+Operating System: Ubuntu
+Version: 24.04.3 LTS (Noble Numbat)
+
+
+**************
+* INPUT DATA *
+**************
+
+
+Linux md5sum checksums for the input files
+polyploids
+LL_RS2L_G1_1
+-	d41d8cd98f00b204e9800998ecf8427e
+LL_RS2L_G1_2
+-	d41d8cd98f00b204e9800998ecf8427e
+LL_RS2L_G1_3
+-	d41d8cd98f00b204e9800998ecf8427e
+progenitors
+A.halleri
+../WGBS/progenitors/A.halleri/Ahal_genome_8chr.fa	35fa16d16b517e7ea5b849c3b01237c1
+../WGBS/progenitors/A.halleri/Ahal_ryohei_renamed.gff	02b63dce1a8877df0a82237caaa75bd1
+../WGBS/progenitors/A.halleri/Ahal_genome_8chr.fa.fai	2a91ddbe1fa502c5d9c4f4cd9c0ccd4d
+A.lyrata
+../WGBS/progenitors/A.lyrata/Alyr_genome_8chr.fa.index	59852d5469b6c71f22b70cca6ad42183
+../WGBS/progenitors/A.lyrata/Alyr_ryohei_renamed.gff	f0c31fe6dbbca5a20ba22b89be69a529
+../WGBS/progenitors/A.lyrata/Alyr_genome_8chr.fa	46a70e58d4025f4f65a392cd40b10010
+../WGBS/progenitors/A.lyrata/Alyr_genome_8chr.fa.fai	81595f17ad0ddf6ba6805a2df17ebc83
+Linux md5sum checksums for the input files
+A.halleri
+../WGBS/progenitors/A.halleri/Ahal_genome_8chr.fa	35fa16d16b517e7ea5b849c3b01237c1
+../WGBS/progenitors/A.halleri/Ahal_ryohei_renamed.gff	02b63dce1a8877df0a82237caaa75bd1
+../WGBS/progenitors/A.halleri/Ahal_genome_8chr.fa.fai	2a91ddbe1fa502c5d9c4f4cd9c0ccd4d
+A.lyrata
+../WGBS/progenitors/A.lyrata/Alyr_genome_8chr.fa.index	59852d5469b6c71f22b70cca6ad42183
+../WGBS/progenitors/A.lyrata/Alyr_ryohei_renamed.gff	f0c31fe6dbbca5a20ba22b89be69a529
+../WGBS/progenitors/A.lyrata/Alyr_genome_8chr.fa	46a70e58d4025f4f65a392cd40b10010
+../WGBS/progenitors/A.lyrata/Alyr_genome_8chr.fa.fai	81595f17ad0ddf6ba6805a2df17ebc83
+
+
+*********
+* TOOLS *
+*********
+
+
+HEAL=1.0.1
+healr=1.0.0
+Tools used to define bins, count GC content and mappability:
+  - bedtools=2.31.1
+  - samtools=1.21
+  - genmap=1.3.0
+  - seqkit=2.10.0
+Tools used for healr:
+  - git
+  - r-base
+  - r-devtools
+
+snake-EAGLE-RC=1.0.1
+eagle-rc=1.1.3
+General analysis tools used in their snakemake wrappers:
+snakemake wrappers release=3.3.3
+  - MulitQC=1.19
+snakemake wrappers release=4.7.2
+  - star=2.7.11b
+snakemake wrappers release=6.2.0
+  - fastp=0.24.1
+Tool used for sorting bams:
+  - samtools=1.21 
+Tool used for quality assessment of classified bam files:
+  - qualimap=2.2.2
+Tools used to install eagle:
+  - git 
+  - make=4.2.1 
+  - zlib=1.2.13
+  - xz=5.2.4
+  - gcc=15.2.0-16
+  - binutils=2.45
+Tools used for hexaploid read classification:
+  - python=3.9
+  - scipy=1.11.3
+  - numpy=1.26.0
+
+snake-GENESPACE=1.0.1
+- GENESPACE=1.2.3
+- MCScanX=No version, last modified on 2025-12-22 20:00:58.618034472
+  - gxx=12.2.0-19)=12.2
+  - r-devtools=2.4.5
+  - r-ggplot2=3.5.1
+  - binutils
+  - agat=1.4.0
+  - r-base=4.3
+  - orthofinder=2.5.5
+  - r-igraph=2.0.3
+  - make=4.2.1
+  - bioconductor-biostrings=2.70
+  - perl=5.32.1
+  - sed=4.7
+  - r-generics=0.1.3
+  - r-dbscan=1.1
+  - fastx_toolkit=0.0.14
+  - openjdk=17
+  - git
+  - r-mass=7.3.60.0.1
+  - r-r.utils=2.12
+  - r-data.table=1.15
+  - bioconductor-rtracklayer=1.62
+
+
+
+****************
+* OUTPUT FILES *
+****************
+
+
+Linux md5sum checksums for the output files
+results/healr/stats/LL_RS2L_G1_3/A.halleri/total_A.halleri.csv	1ccb4b99ad8bbffa1209a5b128df7701
+results/healr/stats/LL_RS2L_G1_3/A.halleri/chr8/count.csv	e7c8336079c101ab1cbcfc8f6ed54d77
+results/healr/stats/LL_RS2L_G1_3/A.halleri/chr8/rle.csv	0ea139f529b73d50d0c65e1aa38fe726
+results/healr/stats/LL_RS2L_G1_3/A.halleri/chr3/count.csv	daea412fb26cc6fc7a529f77227d7fed
+results/healr/stats/LL_RS2L_G1_3/A.halleri/chr3/rle.csv	01f02e5b334ef2f19af236b291f1285a
+results/healr/stats/LL_RS2L_G1_3/A.halleri/chr1/count.csv	be0e22dd4e7ab9ec0bc580aa62b621db
+results/healr/stats/LL_RS2L_G1_3/A.halleri/chr1/rle.csv	d895d6ef71c886e65ce9e7c8848983c4
+results/healr/stats/LL_RS2L_G1_3/A.halleri/chr4/count.csv	f5bc2905874c1c0e92d186e96930039c
+results/healr/stats/LL_RS2L_G1_3/A.halleri/chr4/rle.csv	7aa6e919be94f607984b981dc9a75c20
+results/healr/stats/LL_RS2L_G1_3/A.halleri/chr6/count.csv	72ee5b0fd05bf44dd0af1d377b074a87
+results/healr/stats/LL_RS2L_G1_3/A.halleri/chr6/rle.csv	f1e6fe03990019a2068ef82a8970f6b0
+results/healr/stats/LL_RS2L_G1_3/A.halleri/chr5/count.csv	39e18191f3353e27603295889b9506eb
+results/healr/stats/LL_RS2L_G1_3/A.halleri/chr5/rle.csv	989efa005eb5a5d85cdc73e8e61f0166
+results/healr/stats/LL_RS2L_G1_3/A.halleri/chr2/count.csv	aa20c3921fe64cfbaf51558920e513fd
+results/healr/stats/LL_RS2L_G1_3/A.halleri/chr2/rle.csv	f11de68e75055cf61c471287e4e4b21f
+results/healr/stats/LL_RS2L_G1_3/A.halleri/chr7/count.csv	6a3e6e9ba20f8b57a11892d991f1267d
+results/healr/stats/LL_RS2L_G1_3/A.halleri/chr7/rle.csv	ae9ea66f5da23d94537cd84116a80533
+results/healr/stats/LL_RS2L_G1_3/A.lyrata/chr8/count.csv	a411996d4ba4ba14d2b052428c7380f9
+results/healr/stats/LL_RS2L_G1_3/A.lyrata/chr8/rle.csv	6af1de857af53fbd90dfcb052f04e6b5
+results/healr/stats/LL_RS2L_G1_3/A.lyrata/chr3/count.csv	32d822f3c24e7932e6e45190aa87cf4b
+results/healr/stats/LL_RS2L_G1_3/A.lyrata/chr3/rle.csv	095764d52087ad256cc2e498fbcdd215
+results/healr/stats/LL_RS2L_G1_3/A.lyrata/chr1/count.csv	9ecb018c410276b8ca4c1f926365b4d8
+results/healr/stats/LL_RS2L_G1_3/A.lyrata/chr1/rle.csv	a3baa0ffe03a63c76f132bdaa05f6045
+results/healr/stats/LL_RS2L_G1_3/A.lyrata/chr4/count.csv	38bff67b23ebfee8fcbca129a833ab74
+results/healr/stats/LL_RS2L_G1_3/A.lyrata/chr4/rle.csv	9fbb27d94a6285f5f3559ad6219081d1
+results/healr/stats/LL_RS2L_G1_3/A.lyrata/chr6/count.csv	072f27c37de4db9395ace8136243329a
+results/healr/stats/LL_RS2L_G1_3/A.lyrata/chr6/rle.csv	caab9513c43e9896b6b53be92939e995
+results/healr/stats/LL_RS2L_G1_3/A.lyrata/chr5/count.csv	6a39ccb9beb9bf3a0c9efe21e834f3e0
+results/healr/stats/LL_RS2L_G1_3/A.lyrata/chr5/rle.csv	431ec22bf8e0425f5baac0b60f0e342f
+results/healr/stats/LL_RS2L_G1_3/A.lyrata/total_A.lyrata.csv	72648a99ac5b1c8e08fd9e50226d44f2
+results/healr/stats/LL_RS2L_G1_3/A.lyrata/chr2/count.csv	d388a27ec323fff0ada927ef324d24ff
+results/healr/stats/LL_RS2L_G1_3/A.lyrata/chr2/rle.csv	23e48ec61caa2c51ecf36ebeb39d67b5
+results/healr/stats/LL_RS2L_G1_3/A.lyrata/chr7/count.csv	48ca8c2275c4631b331f02483560c995
+results/healr/stats/LL_RS2L_G1_3/A.lyrata/chr7/rle.csv	c09530efc1d01a00930a8adf1466b6ed
+results/healr/stats/.snakemake_timestamp	d41d8cd98f00b204e9800998ecf8427e
+results/healr/stats/LL_RS2L_G1_1/A.halleri/total_A.halleri.csv	eb6a6bfc56edff83ec36719bd7482830
+results/healr/stats/LL_RS2L_G1_1/A.halleri/chr8/count.csv	3896702d62b0912d4b002651149bc7ed
+results/healr/stats/LL_RS2L_G1_1/A.halleri/chr8/rle.csv	aaaed2e2589caa9bcaf5a2f0ba0d9d24
+results/healr/stats/LL_RS2L_G1_1/A.halleri/chr3/count.csv	ea8ecb3a194fbdcce0644dbc1f271357
+results/healr/stats/LL_RS2L_G1_1/A.halleri/chr3/rle.csv	f9e76c1a320412f5e100e8d664d4fff3
+results/healr/stats/LL_RS2L_G1_1/A.halleri/chr1/count.csv	2baf7402260869351fb3f43cfea71f80
+results/healr/stats/LL_RS2L_G1_1/A.halleri/chr1/rle.csv	ee4f7293b8820e792b2a8281a78d43b5
+results/healr/stats/LL_RS2L_G1_1/A.halleri/chr4/count.csv	9b4ec8ede64ac44fca43e7cccd09a859
+results/healr/stats/LL_RS2L_G1_1/A.halleri/chr4/rle.csv	feb6bb2f7b3ff9daad0630fd5ab3d59d
+results/healr/stats/LL_RS2L_G1_1/A.halleri/chr6/count.csv	19cfbe41269eeb09f0c5af0974a87cda
+results/healr/stats/LL_RS2L_G1_1/A.halleri/chr6/rle.csv	5dc9a21e21c6439a58d0cb278940bbcf
+results/healr/stats/LL_RS2L_G1_1/A.halleri/chr5/count.csv	3ed1cc61326cbce7e516c352685d7624
+results/healr/stats/LL_RS2L_G1_1/A.halleri/chr5/rle.csv	4bf41b8ab780b88d99c96d7ab72e8e2a
+results/healr/stats/LL_RS2L_G1_1/A.halleri/chr2/count.csv	89d4714a26b490edff4c356e55a5920a
+results/healr/stats/LL_RS2L_G1_1/A.halleri/chr2/rle.csv	d09cf16599623ffe0e99412a50a46e07
+results/healr/stats/LL_RS2L_G1_1/A.halleri/chr7/count.csv	413263de102434c0b48f5890f3309dff
+results/healr/stats/LL_RS2L_G1_1/A.halleri/chr7/rle.csv	0c5b46abb6818f3314272418c33cd03b
+results/healr/stats/LL_RS2L_G1_1/A.lyrata/chr8/count.csv	28838816d2a06d5e8db8adcca44249d8
+results/healr/stats/LL_RS2L_G1_1/A.lyrata/chr8/rle.csv	1c5f8dc86f904872e4082a71a84f5329
+results/healr/stats/LL_RS2L_G1_1/A.lyrata/chr3/count.csv	cacc3372ef5d543c07e7a99abea0c83c
+results/healr/stats/LL_RS2L_G1_1/A.lyrata/chr3/rle.csv	6ddd4461b495dc8384e1ba0b9e4434d3
+results/healr/stats/LL_RS2L_G1_1/A.lyrata/chr1/count.csv	20c324dd64d222cd7f350998a2fd9921
+results/healr/stats/LL_RS2L_G1_1/A.lyrata/chr1/rle.csv	29b40b30762b6a700e1c96a66fbd9899
+results/healr/stats/LL_RS2L_G1_1/A.lyrata/chr4/count.csv	467c23e20f9f4885936627277fa442c6
+results/healr/stats/LL_RS2L_G1_1/A.lyrata/chr4/rle.csv	71c34b75eeb2a9981c744eded3b11999
+results/healr/stats/LL_RS2L_G1_1/A.lyrata/chr6/count.csv	3bc356f31cdd43b68cd9b88741ffbc2f
+results/healr/stats/LL_RS2L_G1_1/A.lyrata/chr6/rle.csv	26852684efbbad87815cadbe01665f94
+results/healr/stats/LL_RS2L_G1_1/A.lyrata/chr5/count.csv	e9f7643db8714de8f811336726030d48
+results/healr/stats/LL_RS2L_G1_1/A.lyrata/chr5/rle.csv	6911477b7ae03dab8abb0cbc2568e302
+results/healr/stats/LL_RS2L_G1_1/A.lyrata/total_A.lyrata.csv	51e7e1979f3b6ab8f146b8a2e8f2d956
+results/healr/stats/LL_RS2L_G1_1/A.lyrata/chr2/count.csv	ab34760fe8b1a09d28a954e6eb11bf8c
+results/healr/stats/LL_RS2L_G1_1/A.lyrata/chr2/rle.csv	285b91c99ae7b4fc0f0e0061bb87b4c3
+results/healr/stats/LL_RS2L_G1_1/A.lyrata/chr7/count.csv	458cc8a2be292f8432f7f37756c1ae17
+results/healr/stats/LL_RS2L_G1_1/A.lyrata/chr7/rle.csv	6877a551a5cccf2a03f744f5f5a546b4
+results/healr/stats/LL_RS2L_G1_2/A.halleri/total_A.halleri.csv	9cd34436af71d0f249e07f47046d85bf
+results/healr/stats/LL_RS2L_G1_2/A.halleri/chr8/count.csv	a7abe05eac3d37faa2132ac27b1d6912
+results/healr/stats/LL_RS2L_G1_2/A.halleri/chr8/rle.csv	932e7be3e35c9fd418c144b7beead274
+results/healr/stats/LL_RS2L_G1_2/A.halleri/chr3/count.csv	2a85f7ba5f0e67fc8c02e65b5ed5fa6f
+results/healr/stats/LL_RS2L_G1_2/A.halleri/chr3/rle.csv	630c012e91688fc3d99e6e94103bf30b
+results/healr/stats/LL_RS2L_G1_2/A.halleri/chr1/count.csv	00d2ba1e61bdb0899522fd2c774a5dab
+results/healr/stats/LL_RS2L_G1_2/A.halleri/chr1/rle.csv	513ec6476453091b25a04e223235f8f0
+results/healr/stats/LL_RS2L_G1_2/A.halleri/chr4/count.csv	ddba2a908aec334cd1cbdec45d3941f2
+results/healr/stats/LL_RS2L_G1_2/A.halleri/chr4/rle.csv	ddbcfcc06f3a69275ae3a285398dea9e
+results/healr/stats/LL_RS2L_G1_2/A.halleri/chr6/count.csv	69cb68c12eabf6ec34680b84dd287f8d
+results/healr/stats/LL_RS2L_G1_2/A.halleri/chr6/rle.csv	7e52fa4ea43486aef4b4c32554726ac9
+results/healr/stats/LL_RS2L_G1_2/A.halleri/chr5/count.csv	ad042dfa32147dcad89348baccd84629
+results/healr/stats/LL_RS2L_G1_2/A.halleri/chr5/rle.csv	d2e1553668fb6b415666e03e89ce01ac
+results/healr/stats/LL_RS2L_G1_2/A.halleri/chr2/count.csv	d059c3fccaab0fa6fb6d763eba3cd8c7
+results/healr/stats/LL_RS2L_G1_2/A.halleri/chr2/rle.csv	7c4c75c202ce959c8a1581450672ef38
+results/healr/stats/LL_RS2L_G1_2/A.halleri/chr7/count.csv	bdea065dfac85f5e62fa3898fde8dc2c
+results/healr/stats/LL_RS2L_G1_2/A.halleri/chr7/rle.csv	ccc1e80bfb61019d89536dc18512f6c3
+results/healr/stats/LL_RS2L_G1_2/A.lyrata/chr8/count.csv	a00677d6c4a5329bec951a63d7e4f615
+results/healr/stats/LL_RS2L_G1_2/A.lyrata/chr8/rle.csv	aa353839c0ce2321009a3a1cee5f44f5
+results/healr/stats/LL_RS2L_G1_2/A.lyrata/chr3/count.csv	7d291679f913e3d04cdecd4f770cb957
+results/healr/stats/LL_RS2L_G1_2/A.lyrata/chr3/rle.csv	055c50624c8de1d41866d45141bec724
+results/healr/stats/LL_RS2L_G1_2/A.lyrata/chr1/count.csv	254fae47e3c458339a291717c529df93
+results/healr/stats/LL_RS2L_G1_2/A.lyrata/chr1/rle.csv	1ebb951b114dedc9bb6e67d44fb0a0b9
+results/healr/stats/LL_RS2L_G1_2/A.lyrata/chr4/count.csv	93a3f4cfcca52511733713426228d228
+results/healr/stats/LL_RS2L_G1_2/A.lyrata/chr4/rle.csv	285e69fbbaf1b60bd426cd85f3023fd9
+results/healr/stats/LL_RS2L_G1_2/A.lyrata/chr6/count.csv	614df0b87d37a90705a26c432430ad21
+results/healr/stats/LL_RS2L_G1_2/A.lyrata/chr6/rle.csv	fb282d56e43a1dc1b5e290a759c46345
+results/healr/stats/LL_RS2L_G1_2/A.lyrata/chr5/count.csv	622f03928f6c701dcba1dd14dfb1116f
+results/healr/stats/LL_RS2L_G1_2/A.lyrata/chr5/rle.csv	842af98b7baa27c0b7ee83984f0c7ce1
+results/healr/stats/LL_RS2L_G1_2/A.lyrata/total_A.lyrata.csv	d7ec85caacddf4ebf9b1bb05ae6d1642
+results/healr/stats/LL_RS2L_G1_2/A.lyrata/chr2/count.csv	b8bc913e99b8c734721654ba8b557a03
+results/healr/stats/LL_RS2L_G1_2/A.lyrata/chr2/rle.csv	4db9dd48911ab60b8d8838754e8dd26a
+results/healr/stats/LL_RS2L_G1_2/A.lyrata/chr7/count.csv	9b1aafddf8ab006d83f613bac9ee7e67
+results/healr/stats/LL_RS2L_G1_2/A.lyrata/chr7/rle.csv	c51a11ac4a41ced70e50ac65be7e7e2a
+
+results/MultiQC/multiqc_report.html	bac0ca69d703e8cee2755dc41533c687
+results/eagle_rc/LL_RS2L_G1_3/LL_RS2L_G1_3_classified_A.lyrata.ref.bam	865c82593c1dbb60556f396233faa4de
+results/eagle_rc/LL_RS2L_G1_3/LL_RS2L_G1_3_classified_A.halleri.ref.bam	112d269f9bf05697a594adf7fb02356e
+results/eagle_rc/LL_RS2L_G1_1/LL_RS2L_G1_1_classified_A.lyrata.ref.bam	949f04f9a7fb3d64e0e9af5cf1316d5f
+results/eagle_rc/LL_RS2L_G1_1/LL_RS2L_G1_1_classified_A.halleri.ref.bam	f4097867b29f213f44f74130476e1907
+results/eagle_rc/LL_RS2L_G1_2/LL_RS2L_G1_2_classified_A.halleri.ref.bam	2cf68f96165d8655258b8a6a194493b3
+results/eagle_rc/LL_RS2L_G1_2/LL_RS2L_G1_2_classified_A.lyrata.ref.bam	6f3c9b94d3a5d3235998929f48b9da8e
+
+results/genespace/run_dir/bed/A.halleri.bed	ba50f485a6763666e5e9890dd2c55644
+results/genespace/run_dir/bed/A.lyrata.bed	a1f246718ff0c0916078e21f22aa7d44
+results/genespace/run_dir/peptide/A.halleri.fa	5d461a822418c7d0e8e3fe9a81cc667b
+results/genespace/run_dir/peptide/A.lyrata.fa	6138243fe67ee9b2ec096b102d4e69c2
+results/genespace/run_dir/results/syntenicBlock_coordinates.csv	ab4b1fe0cbe3771cefa9c9c6d7f63a7e
+results/genespace/run_dir/results/syntenicRegion_coordinates.csv	6f09a2c2436a161b5f52105e6ee5a99c
