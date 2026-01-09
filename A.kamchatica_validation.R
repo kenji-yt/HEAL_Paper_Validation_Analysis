@@ -55,4 +55,4 @@ plot_heal_heat_map(alignment = wgbs_aln, , xrange=c(0:4), yrange=c(0:4), output_
 
 ########## Figure 3.C ###########
 
-plot_cn_heat(wgbs_cn, output_dir = "figure3")
+plot_cn_heat(wgbs_cn, chr_labels = TRUE, subgenome_labels = TRUE, chr_limits = TRUE,  device = "png", output_dir = "figure3")
