@@ -1,3 +1,5 @@
+# Assumes the working directory is 'HEAL_Paper_Validation_Analysis' 
+
 #################
 # Load Packages #
 #################
@@ -34,35 +36,23 @@ wgbs_aln <- get_heal_alignment(wgbs_cn, genespace_dir = "data/A.kamchatica/synte
 #    Plot alignments    #
 #########################
 
-########## Figure 10.A & Supplementary fig.5 ###########
+########## Figure 3.A ########## 
 
-plot_alignment(alignment = wgbs_aln, heal_list = wgbs_cn, add_bins = "all", color_map = c("purple4", "orange3"), alpha = 0.1, output_dir = "figure10", device = "svg") 
+plot_alignment(alignment = wgbs_aln, heal_list = wgbs_cn, add_bins = "all", color_map = c("purple4", "orange3"), alpha = 0.1, output_dir = "figure3", device = "svg") 
 
 ###################
 #    HEAT MAPS    #
 ###################
 
-########## Figure 10.B ###########
+########## Figure 3.B ###########
 
-plot_heal_heat_map(alignment = wgbs_aln, , xrange=c(0:4), yrange=c(0:4), output_dir = "figure10", device = "svg")
-
-
-###############################
-#    Interesting statistics   #
-###############################
-
-# How many concordant bins are changes in CN
-100*c(sum(wgbs_aln$LL_RS2L_G1_1$status=="concordant") / length(wgbs_aln$LL_RS2L_G1_1$status), 
-                                      sum(wgbs_aln$LL_RS2L_G1_2$status=="concordant") / length(wgbs_aln$LL_RS2L_G1_2$status),
-                                      sum(wgbs_aln$LL_RS2L_G1_2$status=="concordant") / length(wgbs_aln$LL_RS2L_G1_2$status))
-
-# How many concordant bins are changes in CN
-100*(c(1-sum(wgbs_aln$LL_RS2L_G1_1$status=="concordant" & wgbs_aln$LL_RS2L_G1_1$cn_A.halleri == 2) / sum(wgbs_aln$LL_RS2L_G1_1$status=="concordant"), 
-  1-sum(wgbs_aln$LL_RS2L_G1_2$status=="concordant" & wgbs_aln$LL_RS2L_G1_2$cn_A.halleri == 2) / sum(wgbs_aln$LL_RS2L_G1_2$status=="concordant"),
-  1-sum(wgbs_aln$LL_RS2L_G1_3$status=="concordant" & wgbs_aln$LL_RS2L_G1_3$cn_A.halleri == 2) / sum(wgbs_aln$LL_RS2L_G1_3$status=="concordant")))
+plot_heal_heat_map(alignment = wgbs_aln, , xrange=c(0:4), yrange=c(0:4), output_dir = "figure3", device = "svg")
 
 
-# The percentage of anchor pairs set using concordance optimization
-100*c(table(wgbs_aln$LL_RS2L_G1_1$method)[["multiple_concordant"]]/length(wgbs_aln$LL_RS2L_G1_1$method),
-                            table(wgbs_aln$LL_RS2L_G1_2$method)[["multiple_concordant"]]/length(wgbs_aln$LL_RS2L_G1_2$method),
-                            table(wgbs_aln$LL_RS2L_G1_3$method)[["multiple_concordant"]]/length(wgbs_aln$LL_RS2L_G1_3$method))
+################################
+#    Genome Wide CN heatmap    #
+################################
+
+########## Figure 3.C ###########
+
+plot_cn_heat(wgbs_cn, output_dir = "figure3")
