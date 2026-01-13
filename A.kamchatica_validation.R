@@ -4,9 +4,6 @@
 # Load Packages #
 #################
 
-library(devtools)
-library(data.table)
-library(gridExtra)
 library(healr)
 
 #####################
