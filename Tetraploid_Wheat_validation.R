@@ -1,8 +1,16 @@
+# Assumes the working directory is 'HEAL_Paper_Validation_Analysis' 
+
 #################
 # Load Packages #
 #################
 
 library(healr)
+
+###############
+# Set threads #
+###############
+
+nThreads <- 10 # Edit to fit your resources 
 
 #####################
 # Load data, filter #
@@ -15,7 +23,8 @@ wheat_raw <- read_heal_list("data/Wheat/healr_list")
 wheat_filt <- filter_bins(wheat_raw, mappability_threshold = 0.85)
 
 # Check GC correction effects. 
-correct_gc(wheat_filt, n_windows = 10, loess_span = 1) # Relationship is flat. Ignore.
+correct_gc(wheat_filt, n_windows = 10, loess_span = 1,
+           n_threads = nThreads) # Relationship is flat. Ignore.
 
 #####################
 # Infer copy number #
@@ -23,28 +32,27 @@ correct_gc(wheat_filt, n_windows = 10, loess_span = 1) # Relationship is flat. I
 
 # Get copy number using standard approach 
 ## Specifying to output the DNAcopy results (full_output = TRUE)
-cn_default <- get_copy_number(wheat_filt, n_threads = 1, full_output = T)
 
-########## Supplementary Figure 4 ###########
-# Note that chromosome names are different here. We rename later.
-plot_bins(cn_default, plot_cn = TRUE, output_dir = "Supp_figure_4",
-          add_DNAcopy = T, color_map = c("darkred", "darkgreen"))
-          
 # Get CN with manual scale 
-cn_manual <- get_copy_number(wheat_filt, n_threads = 1, 
+cn_manual <- get_copy_number(wheat_filt, n_threads = nThreads, 
                              manual_scale = c(0.5, 1.25, 2, 2.75, 3.5))
-
-# Note that chromosome names are different here. We rename later.
-plot_bins(cn_manual, plot_cn = TRUE, output_dir = "Supp_figure_5",
-          color_map = c("darkred", "darkgreen"))
 
 # Remove short spans
 short_span_corrected <- remove_short_spans(cn_manual, max_length = 5)
 
-# Get alignment
-aln_wheat <- get_heal_alignment(short_span_corrected, genespace_dir = "data/Wheat/syntenicHits/", n_threads = 10)
+######################
+#    Get alignment   #
+######################
 
-# Rename chromosomes 
+# Get alignment
+aln_wheat <- get_heal_alignment(short_span_corrected,
+                                genespace_dir = "data/Wheat/syntenicHits/",
+                                n_threads = nThreads)
+
+######################
+# Rename chromosomes #
+######################
+
 entries <- paste0("Group ", 1:7)
 a_replace <- unique(short_span_corrected$A_subgenome$CN$chr)
 d_replace <- unique(short_span_corrected$D_subgenome$CN$chr)
@@ -61,21 +69,52 @@ for(i in 1:length(entries)){
   }
 }
 
+##########################################
+# Infer copy number without manual scale #
+##########################################
+
 # Get copy number with normal scale for comparison
-cn_IJ <- get_copy_number(short_span_corrected, n_threads = 1, full_output = T)
+cn_default <- get_copy_number(short_span_corrected, 
+                         n_threads = nThreads, full_output = T)
 
-########## Figure 5 ###########
-# Plot without manual scale
-plot_bins(cn_IJ, view_sample = "sample_I", specific_chr = "Group 3", plot_cn = T, add_DNAcopy = T, add_bins = T, color_map = c("darkred", "darkgreen"), ylim_max = 4.5, linewidth = 3, width = 6.70, height = 5.23, device = "svg", output_dir = "/srv/kenlab/kenji/exploring_wheat_BMC_genomic_paper/figures/DNAcopy_lines")
-plot_bins(cn_IJ, view_sample = "sample_H", specific_chr = "Group 2", plot_cn = T, add_DNAcopy = T, add_bins = T, color_map = c("darkred", "darkgreen"), ylim_max = 4.5, linewidth = 3, width = 6.70, height = 5.23, device = "svg", output_dir = "/srv/kenlab/kenji/exploring_wheat_BMC_genomic_paper/figures/DNAcopy_lines")
-plot_bins(cn_IJ, view_sample = "sample_J", specific_chr = "Group 3", plot_cn = T, add_DNAcopy = T, add_bins = T, color_map = c("darkred", "darkgreen"), ylim_max = 4.5, linewidth = 3, width = 6.70, height = 5.23, device = "svg", output_dir = "/srv/kenlab/kenji/exploring_wheat_BMC_genomic_paper/figures/DNAcopy_lines")
 
-########## Figure 6 ###########
-# Plot with manual scale
-plot_bins(short_span_corrected, view_sample = "sample_I", specific_chr = "Group 3", plot_cn = T, add_DNAcopy = F, add_bins = T, color_map = c("darkred", "darkgreen"), ylim_max = 4.5, linewidth = 3, width = 6.70, height = 5.23, device = "svg", output_dir = "/srv/kenlab/kenji/exploring_wheat_BMC_genomic_paper/figures/DNAcopy_lines/corrected")
-plot_bins(short_span_corrected, view_sample = "sample_H", specific_chr = "Group 2", plot_cn = T, add_DNAcopy = F, add_bins = T, color_map = c("darkred", "darkgreen"), ylim_max = 4.5, linewidth = 3, width = 6.70, height = 5.23, device = "svg", output_dir = "/srv/kenlab/kenji/exploring_wheat_BMC_genomic_paper/figures/DNAcopy_lines/corrected")
-plot_bins(short_span_corrected, view_sample = "sample_J", specific_chr = "Group 3", plot_cn = T, add_DNAcopy = F, add_bins = T, color_map = c("darkred", "darkgreen"), ylim_max = 4.5, linewidth = 3, width = 6.70, height = 5.23, device = "svg", output_dir = "/srv/kenlab/kenji/exploring_wheat_BMC_genomic_paper/figures/DNAcopy_lines/corrected")
+#########################
+#    Plot Copy Number   #
+#########################
 
-########## Figure 7, 8 and 9 ###########
-### Riparian
-plot_riparian(alignment = aln_wheat, heal_list = short_span_corrected, genespace_dir = "/srv/kenlab/kenji/exploring_wheat_BMC_genomic_paper/wheat_results/genespace_dir/", theme="dark", n_threads = 10, legend_text_size = 13, title_size = 20, width = 20, height = 10, output_dir = "/srv/kenlab/kenji/exploring_wheat_BMC_genomic_paper/figures/riparian")
+########## Supplementary Figure 4 ###########
+
+plot_bins(cn_default, plot_cn = TRUE, ylim_max = 4.5,
+          output_dir = "Supp_figure_4", add_DNAcopy = T,
+          view_sample = "sample_H", specific_chr = "Group 2",
+          color_map = c("darkred", "darkgreen"), n_threads = nThreads)
+
+plot_bins(cn_default, plot_cn = TRUE, ylim_max = 4.5,
+          output_dir = "Supp_figure_4", add_DNAcopy = T,
+          view_sample = "sample_J", specific_chr = "Group 3",
+          color_map = c("darkred", "darkgreen"), n_threads = nThreads)
+
+
+########## Supplementary Figure 5 ###########
+
+plot_bins(short_span_corrected, plot_cn = TRUE, ylim_max = 4.5,
+          output_dir = "Supp_figure_5",
+          view_sample = "sample_H", specific_chr = "Group 2",
+          color_map = c("darkred", "darkgreen"), n_threads = nThreads)
+
+plot_bins(short_span_corrected, plot_cn = TRUE, ylim_max = 4.5,
+          output_dir = "Supp_figure_5",
+          view_sample = "sample_J", specific_chr = "Group 3",
+          color_map = c("darkred", "darkgreen"), n_threads = nThreads)
+
+
+#######################
+#    Plot Riparian    #
+#######################
+
+########## Figure 4.A & Supplementary Figures 8.A & 9.A ###########
+plot_riparian(alignment = aln_wheat, heal_list = short_span_corrected,
+              genespace_dir = "data/Wheat/syntenicRegions/",
+              theme="dark", legend_text_size = 13, 
+              title_size = 20, width = 20, height = 10,
+              output_dir = "wheat_riparian_figures", device_vector = "png")
